@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue-2.4.0.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div id="app">
+    <div class="header">
+        <div class="title">
+            <h3>添加品牌</h3>
+        </div>
+        <div class="h_txt">
+            <label>
+                Name:
+                <input type="text" v-model="name" class="form-control" @keyup.enter="add">
+            </label>
+            <input type="text" value="添加" @click="add" class="btn">
+            <br>
+            <label class="mt10">
+                搜索关键字:
+                <input type="text" v-model="keywords"  class="form-control">
+            </label>
+        </div>
+    </div>
+
+
+
+<!--表格-->
+    <table class="data">
+        <thead class="d_head">
+            <tr>
+                <th class="id">Id</th>
+                <th class="name">Name</th>
+                <th class="cit">Citme</th>
+                <th class="ope">Operation</th>
+            </tr>
+        </thead>
+        <tbody class="t_body">
+            <tr v-for="item in search(keywords)" :key="item.id">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.ctime| time('yyyy-mm-dd hh-mm-ss')}}</td>
+                <td>
+                    <a href="" @click.prevent="del(item.id)">删除</a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <script>
+        var json = [
+            {id: 1, name: '五菱宏光', ctime: new Date()},
+            {id: 2, name: '众泰', ctime: new Date()},
+            {id: 3, name: '本田', ctime: new Date()},
+            {id: 4, name: '大众', ctime: new Date()}
+        ]
+
+
+        //全局过滤器
+        //注意全局的fliter没有s，局部的有s
+
+        //过滤器的语法
+        //Vue.filter('过滤器名称'， function() {})
+        //过滤器中的function，第一个参数已经被规定死了，永远都是管道符前面传递过来的数据
+        Vue.filter('time',function (data,pattern='') {//如果pattern是未定义类型，则调用toLowerCase会报错
+            var dt=new Date(data);
+            var y=dt.getFullYear();
+            var m=(dt.getMonth()+1).toString().padStart(2,'0');
+            var d=dt.getDate().toString().padStart(2,'0');
+            var hh=dt.getHours().toString().padStart(2,'0');
+            var mm=dt.getMinutes().toString().padStart(2,'0');
+            var ss=dt.getSeconds().toString().padStart(2,'0');
+            if(pattern.toLowerCase()==='yyyy-mm-dd'){
+                return `${y}-${m}-${d}`
+            }
+            else {
+                return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+            }
+
+        });
+
+
+
+
+        //创建 Vue 实例，得到viewModel
+        var vm = new Vue({
+            el:'#app',
+            data: {
+                name: '',
+                keywords: '',//搜索的关键字
+                list: []
+            },
+            created() {
+                this.getAllList();
+            },
+            methods: {
+                add () {//添加品牌列表到数据
+                    //分析：
+                    //1.查看数据API接口，要发送一个post请求，this.$http.post
+                    //2.this.@http.post() 中接收三个参数
+                    // 2.1：第一个参数：要请求的URL地址
+                    // 2.2:要提交给服务器的数据，要一对象的形式提交给服务器{name: this.name}
+                    // 2.3: 第三个参数：是一个配置对象，要一那种表单类型提交过去 {emulateJSON: true}
+                            //以普通表单格式，将数据提交给服务器 application/x-www-form-urlencodeed
+                    //3. 在post的方法中，使用 .then 来设置成功的回调函数，如果想要拿到成功的数据，想要restult.body
+                    let tId = 0;
+                    for (let i = 0; i < json.length; i++) {
+                        tId +=1;
+                    }
+                    let newD = {id: tId + 1, name: this.name, ctime: new Date()};
+                    json.push(newD);
+                    this.getAllList();
+                    this.name = '';
+                },
+                getAllList() {//获取是所有数据
+                    this.list = json;
+                },
+                del (id) {//删除品牌
+                    //方法一
+                    /*for(let j =0; j< json.length;j++) {
+                        if (json[j].id == id) {
+                            json.splice(j,1);
+                        }
+                    }*/
+
+                    //方法二
+                    /*json.some((item,i)=> {
+                        if (item.id == id) {
+                            json.splice(i,1);
+                            //在数组的 some 方法中，如果return true，就会立即终止这个数组的后续循环
+                            return true;
+                        }
+                    })*/
+
+                    //方法三
+                    var index = json.findIndex(item => {
+                        if (item.id == id) {
+                            return true;
+                        }
+                    })
+                    json.splice(index, 1);
+
+
+                    for (let d =0; d< json.length;d++) {
+                        json[d].id = d+1;
+                    }
+                    this.getAllList();
+
+
+                },
+                search (keywords) {//根据关键字搜索数据
+                    /*let newList = [];
+                    this.list.forEach(item => {
+                        if (item.name.indexOf(keywords) != -1) {
+                            newList.push(item);
+                        }
+                    })
+                    return newList;*/
+
+                        //forEach some fliter findIndex 这些都属于数组的新方法
+                    //都会对数组 中的每一项，进行遍历，执行相关的操作
+                    return this.list.filter(item => {
+
+                        //在es6中为字符串提供了新方法，叫做 String.prototype.includes('要包含的字符串')
+                        //如果包含返回true 否则 返回false
+                        if (item.name.includes(keywords)) {
+                            return item;
+                        }
+                    })
+                }
+
+            }
+        });
+    </script>
+
+</body>
+</html>

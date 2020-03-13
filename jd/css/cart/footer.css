@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 990px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/*声明字体图标*/
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../../fonts/icomoon.eot?tl7gi9');
+    src:  url('../../fonts/icomoon.eot?tl7gi9#iefix') format('embedded-opentype'),
+    url('../../fonts/icomoon.ttf?tl7gi9') format('truetype'),
+    url('../../fonts/icomoon.woff?tl7gi9') format('woff'),
+    url('../../fonts/icomoon.svg?tl7gi9#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+a {
+    text-decoration: none;
+}
+i {
+    font-family: "icomoon";
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+/*---------------------------------------------------------------*/
+.J_footer {
+    background-color: #f4f4f4;
+}
+
+.mod_copyright {
+    background-color: #f4f4f4;
+}
+
+.mod_service {
+    height: 42px;
+    padding: 30px 0;
+    border-bottom: 1px solid #dedede;
+}
+
+
+.mod_service_list {
+    overflow: hidden;
+    height: 42px;
+    padding-left: 55px;
+}
+
+.mod_service_item {
+    width: 224px;
+    height: 100%;
+    float: left;
+    display: inline-block;
+}
+
+
+.mod_service_item > div {
+    width: 225px;
+    height: 42px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-left: 45px;
+    position: relative;
+}
+
+.mod_service_item  h5 {
+    width: 36px;
+    height: 42px;
+    position: absolute;
+    left: 4px;
+    top: 0;
+}
+
+.mod_service_item P {
+    line-height: 42px;
+    font-size: 18px;
+}
+
+
+.service_duo {
+    background-image: url("../../images/foot.png");
+    background-repeat: no-repeat;
+    background-position: 0 -192px;
+}
+
+
+.service_k {
+    background-image: url("../../images/foot.png");
+    background-repeat: no-repeat;
+    background-position: -41px -192px;
+}
+
+.service_hao {
+    background-image: url("../../images/foot.png");
+    background-repeat: no-repeat;
+    background-position: -82px -192px;
+}
+
+.service_s {
+    background-image: url("../../images/foot.png");
+    background-repeat: no-repeat;
+    background-position: -123px -192px;
+}
+
+/*------------------------------------------------------------------*/
+.mod_help {
+    height: 200px;
+    padding: 20px 0;
+}
+
+.help_bb {
+    height: 200px;
+    border-bottom: 1px solid #dedede;
+
+}
+
+.help_bb > div {
+    margin-right: -340px;
+    padding-left: 55px;
+}
+.help_nav {
+    width: 198px;
+    float: left;
+}
+
+.help_nav > h5 {
+    font-size: 14px;
+    color: #666;
+}
+
+.help_nav > ul {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #666;
+    line-height: 22px;
+}
+
+.help_nav a {
+    color: #666;
+}
+
+.help_nav a:hover {
+    color: #e1251b;
+}
+
+.help_navR {
+    float: right;
+    width: 200px;
+    text-align: center;
+    color: #666;
+    position: relative;
+}
+
+.help_navR > h5 {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.help_navR > p {
+    width: 180px;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.help_navR > a {
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    right: 20px;
+}
+
+/*----------------------------------------------------*/
+.mod_split {
+    margin: 0 6px;
+    color: #ccc;
+}
+
+.mod_copyright {
+    font-size: 12px;
+    color: #666;
+}
+
+.mod_copyright_links {
+    text-align: center;
+}
+
+.mod_copyright_links > a {
+    color: #666;
+}
+
+.mod_copyright_links > a:hover {
+    color: #e1251b;
+}
+
+.mod_copyright_info {
+    margin: 20px 0;
+}
+
+.mod_copyright_info {
+    text-align: center;
+    line-height: 22px;
+    color: #999;
+}
+
+.mod_copyright_info a {
+    color: #999;
+}
+
+.mod_copyright_info a:hover {
+    color: #e1251b;
+}
+
+
+.mod_copyright_inter i{
+    display: inline-block;
+    width: 15px;
+    height: 12px;
+    margin-right: 4px;
+    background-image: url("../../images/foot.png");
+    background-repeat: no-repeat;
+    vertical-align: -1px;
+}
+
+.inter_icon_1 {
+    background-position: -109px -155px;
+}
+
+.inter_icon_2 {
+    background-position: -169px -155px;
+}
+
+.inter_icon_3 {
+    background-position: -149px -155px;
+}
+
+.inter_icon_4 {
+    background-position: -129px -155px;
+}
+
+.inter_icon_5 {
+    background-position: -108px -172px;
+}
+
+.mod_copyright_auth {
+    margin: 25px 0;
+}
+
+.mod_copyright_auth >a {
+    width: 103px;
+    height: 32px;
+    display: inline-block;
+    margin-right: 6px;
+    background-image: url("../../images/foot.png");
+    background-repeat: no-repeat;
+}
+
+.auth_1 {
+    background-position: -206px -111px;
+}
+
+.auth_2 {
+    background-position: -206px -74px;
+}
+
+.auth_3 {
+    background-position: -206px -37px;
+}
+
+.auth_4 {
+    background-position: -206px 0;
+}
+
+.auth_5 {
+    background-position: 0 -155px;
+}

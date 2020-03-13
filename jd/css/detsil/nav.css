@@ -1,0 +1,50 @@
+.de_header {
+    height: 30px;
+    border-bottom: 1px solid #ccc;
+    background: #e3e4e5;
+    line-height: 30px;
+    font-size: 13px;
+    color: #5c5452;
+}
+
+.fl {
+    display: flex;
+    text-align: center;
+    float: left;
+}
+
+.fl > li {
+    margin-right: 10px;
+}
+.fl a {
+    color: #999;
+}
+
+
+.fr {
+    display: flex;
+    float: right;
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.fr a {
+    color: #999;
+}
+
+.fr_span {
+    margin: 0 6px;
+    color: #ccc;
+}
+
+.fr i {
+    height: 16px;
+    float: right;
+    font-size: 18px;
+    margin-top: 2px;
+    color: #999;
+}
+
+.fr .fr_active {
+    color: #e1251b;
+}

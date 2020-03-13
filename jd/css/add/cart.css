@@ -1,0 +1,370 @@
+body {
+    background-color: #fff;
+}
+
+.logo_nav {
+    overflow: hidden;
+}
+
+.logo {
+    margin: 20px 0 22px;
+    float: left;
+    width: 276px;
+    height: 50px;
+}
+
+.logo > a {
+    display: inline-block;
+    width: 134px;
+    height: 42px;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.search {
+    float: left;
+    width: 584px;
+    margin: 27px 30px 0 90px;
+    height: 36px;
+}
+
+.ip_txt {
+    width: 494px;
+    height: 24px;
+    line-height: 24px;
+    border: 2px solid #f30213;
+    border-right: 0;
+    color: #999;
+    outline: 0;
+    padding: 4px 4px;
+    margin-bottom: 4px;
+    float: left;
+}
+
+.btn_1 {
+    width: 80px;
+    height: 36px;
+    border: 0;
+    float: left;
+    background-color: #f30213;
+    color: #fff;
+}
+
+.settleup {
+    float: left;
+    width: 91px;
+    height: 34px;
+    margin-top: 27px;
+    background-color: #F9F9F9;
+    padding-left: 19px;
+    padding-right: 28px;
+    line-height: 30px;
+    border: 1px solid #DFDFDF;
+    position: relative;
+}
+
+.settleup a {
+    color: #f30213;
+    font-size: 12px;
+}
+
+.ci-left {
+    width: 16px;
+    height: 16px;
+    background-image: url("../images/ci_left.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    top: 8px;
+}
+
+.ci_count {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #DA1026;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #fff;
+}
+
+/*中间导航模块 --------------------------------------------------------------------*/
+
+.c_nav {
+    margin-top: 10px;
+    height: 33px;
+    border-bottom: 2px solid #f30213;
+}
+
+.categorys {
+    width: 190px;
+    height: 33px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: #f30213;
+    line-height: 33px;
+    text-align: center;
+    font-size: 14px;
+    float: left;
+}
+
+.categorys a {
+    color: #fff;
+    height: 33px;
+    display: inline-block;
+    text-align: center;
+}
+
+.navitems {
+    overflow: hidden;
+}
+
+.navitems li {
+    float: left;
+    font-size: 14px;
+}
+
+.navitems a {
+    color: #333;
+    font-weight: 700;
+    height: 33px;
+    padding: 0 22px;
+    line-height: 33px;
+    text-align: center;
+}
+
+.spacer {
+    float: left;
+    width: 1px;
+    height: 13px;
+    margin: 10px 0;
+    background: #eee;
+    overflow: hidden;
+}
+
+/*添加购物车成功同时模块-----------------------------*/
+.main {
+    height: 145px;
+    background-color: #f5f5f5;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+
+.success-top {
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.succ-icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/succ.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    float: left;
+}
+
+
+.success-top > h3{
+    float: left;
+    margin-left: 10px;
+    color: #71b247;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.p-item {
+    overflow: hidden;
+    float: left;
+}
+
+.p-img {
+    float: left;
+}
+
+.p-info {
+    float: left;
+    width: 520px;
+    margin: 0;
+    padding-left: 10px;
+}
+
+.p-info > div {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.p_name {
+    margin-top: 5px;
+}
+
+.p_name a{
+    font-size: 14px;
+    color: #333;
+}
+
+
+.p-extra {
+    font-size: 12px;
+    color: #AAA;
+}
+
+
+.success-btns {
+    float: right;
+    margin-top: 26px;
+}
+
+.success-btns a{
+    display: inline-block;
+    padding: 0 30px;
+    color: #E2231A;
+    background-color: #fff;
+    height: 34px;
+    border: 1px solid #fff;
+    line-height: 36px;
+}
+
+.success-btns .btn-addtocart {
+    position: relative;
+    color: #fff;
+    background-color: #E2231A;
+    border: 1px solid #E2231A;
+    margin-left: 10px;
+}
+
+.success-btns b{
+    background: url("../images/succ.png") -20px -81px no-repeat;
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    top: 8px;
+    right: 15px;
+}
+
+/*购买了该商品的用户还购买了*/
+.m1 {
+    margin-top: 20px;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.m1 .mt h3 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.m1 .mc {
+    overflow: hidden;
+}
+
+.m1 .mc li {
+    width: 270px;
+    margin-right: 40px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    float: left;
+}
+
+.m1 .p_img2 {
+    float: left;
+    margin-right: 10px;
+    height: 98px;
+}
+
+.m1 .p_name2 {
+    float: left;
+    width: 160px;
+    height: 36px;
+    line-height: 18px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+.m1 .p_name2 a {
+    color: #333;
+}
+
+.m1 .p_price2 {
+    float: left;
+    width: 160px;
+    height: 19px;
+    font-size: 12px;
+    color: #D91F20;
+}
+
+.m1 .P_bnt2 {
+    float: left;
+    margin-top: 8px;
+}
+
+.m1 .P_bnt2 a {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    color: #333;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 12px;
+}
+
+.m1 .P_bnt2 b {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    background-image: url("../images/succ.png");
+    background-repeat: no-repeat;
+    background-position: 0 -57px;
+    vertical-align: middle;
+}
+
+.m1 .mc .li_last {
+    margin-right: 0;
+}
+
+.s-panel-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.s-panel-nav ul{
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+}
+
+.s-nav-item {
+    padding: 5px 9px;
+    margin: 0 8px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    display: inline;
+    line-height: 12px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.s-panel-nav .curr{
+    color: #e4393c;
+    border-color: #e4393c;
+    border-radius: 15px;
+    background-color: #fff;
+}
