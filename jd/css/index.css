@@ -1103,6 +1103,10 @@ position: relative;
     color: #e1251b;
 }
 
+.elevator_list .list_top > a:hover {
+    color: #fff;
+}
+
 .list_top_i {
     font-family: "icomoon";
     font-size: 25px;
