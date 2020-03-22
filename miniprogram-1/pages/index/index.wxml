@@ -1,0 +1,413 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 店铺绑定 -->
+  <view class="shop">
+    <view class="shop_d">
+      <view>我的余单</view>
+      <view>88888(单)</view>
+    </view>
+    <view class="shop_bind">
+      <button class="bind_bt">店铺绑定</button>
+    </view>
+  </view>
+
+  <!-- 滑动窗口 -->
+  <view class="box_sw">
+      <swiper  bindchange="onSlideChangeEnd">
+   <swiper-item class="swiper1" value="1">
+      <view class="lf-box"></view>
+      <view class="ri-box"></view>
+      <view class="vi-box">
+        <text>综合行情</text>
+        <view class="box-sel">
+          <navigator class="box-img" url="../hq1/hq.wxml">
+            主营类别
+          </navigator>
+          <icon class="box-icon"></icon>
+        </view>
+        <view class="box-p">
+          <text>商圈客单价  (实收)</text>
+          <text class="p-num">12</text>
+          <text class="num-d">(元)</text>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item class="swiper2">
+      <view class="lf-box"></view>
+      <view class="ri-box"></view>
+      <view class="vi-box">
+        <!-- <text>综合行情</text>
+        <view class="box-sel">
+          <text>主营类别</text>
+          <image class="box-img"></image>
+          <icon class="box-icon"></icon>
+        </view>
+        <view class="box-p">
+          <text>商圈客单价  (实收)</text>
+          <text class="p-num">12</text>
+          <text class="num-d">(元)</text>
+        </view> -->
+        <view >
+          同行业
+          <text class="box-tq">优惠活动</text>
+          行情
+        </view>
+        <view class="box-sv">
+          商圈
+          <text class="sv-tet">月销量排行前20%</text>
+          活动使用详情
+        </view>
+      </view>
+        
+    </swiper-item>
+    <swiper-item class="swiper3">
+      <view class="lf-box"></view>
+      <view class="ri-box"></view>
+      <view class="vi-box">
+        <!-- <text>综合行情</text>
+        <view class="box-sel">
+          <text>主营类别</text>
+          <image class="box-img"></image>
+          <icon class="box-icon"></icon>
+        </view>
+        <view class="box-p">
+          <text>商圈客单价  (实收)</text>
+          <text class="p-num">12</text>
+          <text class="num-d">(元)</text>
+        </view> -->
+
+        <view >
+          同行业
+          <text class="box-tq">优惠活动</text>
+          行情
+        </view>
+        <view class="box-sv">
+          商圈
+          <text class="sv-tet">月销量排行前20%</text>
+          活动使用详情
+        </view>
+      </view>
+    </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 柱状图渲染 -->
+      <view class="bar" style="display:{{bdisplay}}" wx:if="{{current == 0}}">
+          <view class="tu-b">
+            <view class="j-time">
+          <view class="j-tit">
+            <text>经营时间关系</text>
+          </view>
+          <view class="tu-box">
+            <!-- <canvas canvas-id="chart" type="2d" class="mychart" style="width: 295px;height: 91px"></canvas> -->
+             <ec-canvas id="chart" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+            <view>
+
+            </view>
+          </view>
+          </view>
+          <view class="trade">
+          <view class="j-tit">
+            <text>行业优惠活动</text>
+          </view>
+         <view class="tip-box">
+           <view class="tip">
+            <ec-canvas id="trade" canvas-id="trade-bar" ec="{{ tb }}"></ec-canvas>
+          </view>
+          <view class="tip-tet">
+              <view class="left-box">
+                <view> 
+                  <text>73%</text>
+                </view>
+                <view>
+                  <text>满减菜品数量%</text>
+                </view>
+                <view>
+                  满减金额
+                  <text>4~10元</text>
+                </view>
+                <view>
+                  满减门槛
+                  <text>20~25元</text>
+                </view>
+              </view>
+              <view class="rig-box">
+                <view>
+                  <text>23%</text>
+                </view>
+                <view>
+                  <text>折扣菜品数量</text>
+                </view>
+                <view>
+                  折扣力度
+                  <text>6.5~8折</text>
+                </view>
+              </view>
+          </view>
+         </view>
+          </view>
+
+          <view class="shaky">
+          <view class="j-tit">
+            <text>招商活动</text>
+          </view>
+          <view class="shaky-box">
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>限时秒杀</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="shaky1" canvas-id="shaky1-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>优惠日历</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="shaky2" canvas-id="shaky2-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>品质联盟</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="shaky3" canvas-id="shaky3-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>节假活动</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="4" canvas-id="shaky4-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            </view>
+          </view> 
+      </view>
+
+      <view class="fr" id="fr" style="display:{{fdisplay}}" wx:if="{{current == 1}}">
+        <view class="shaky-box">
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>限时秒杀</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="shaky1" canvas-id="shaky1-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>优惠日历</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="shaky2" canvas-id="shaky2-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>品质联盟</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="shaky3" canvas-id="shaky3-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>节假活动</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="4" canvas-id="shaky4-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+      </view>
+          
+      <view class="ma" id="ma" style="display:{{mdisplay}}" wx:if="{{current == 2}}">
+        <view class="shaky-box">
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>限时秒杀</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="shaky1" canvas-id="shaky1-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>优惠日历</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="shaky2" canvas-id="shaky2-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>品质联盟</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="shaky3" canvas-id="shaky3-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+              <view class="fl">
+                <view class="sk-tet">
+                  <text>节假活动</text>
+                </view>
+                <view class="sk-box">
+                  <ec-canvas id="4" canvas-id="shaky4-bar" ec="{{ sk }}"></ec-canvas>
+                </view>
+                <view class="sk-pl">
+                  <view class="pl-b">
+                    <icon class="pl-ic"></icon>
+                    <view>报名率</view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                  <view class="pl-t">
+                    <icon class="pl-ic pl-t-ic"></icon>
+                    <view>通过率 </view>
+                    <text class="pl-num">30%</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+      </view>
+          
+    
+
+</view>

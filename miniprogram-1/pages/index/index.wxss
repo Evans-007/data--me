@@ -1,0 +1,331 @@
+/**index.wxss**/
+
+
+/** 样式 **/
+
+/*注册字体图标*/
+
+
+.container {
+  background-color: #F2F2F2;
+}
+
+.shop {
+  width: 100%;
+  display: flex;
+  font-size: 12px;
+  padding-left: 20px;
+  color: #fff;
+  background-color: #65A2F5;
+  border-top: 1px solid #fff;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+
+.time {
+width: 100%;
+height: 19px;
+background-color: #65A2F5;
+}
+
+.shop_d {
+  float: left;
+  margin-top: 6px;
+}
+
+.shop_bind .bind_bt{
+display: block;
+width: 89px;
+height: 28px;
+line-height: 28px;
+color: #fff;
+margin-top: 10px;
+margin-left: 50%;
+margin-bottom: 10px;
+background-color: #65a2f5;
+border: 1px solid #fff;
+border-radius: 10px;
+padding: 0;
+}
+
+
+/* 滑动模块下拉 */
+.vi-box {
+  width: 80%;
+  height: 115px;
+  margin: 10px auto;
+  background-color: #4AAAFF;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.box_sw  {
+  padding: 10 20px;
+  overflow: hidden;
+  margin-top: 49px;
+}
+
+.box-sel {
+  width: 157px;
+  height: 24px;
+  position: relative;
+  float: right;
+  overflow: hidden;
+}
+
+.box-sel > text {
+  float: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.box-img {
+  display: inline-block;
+  width: 157px;
+  height: 24px;
+  background-color: #2299FF;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+}
+
+.box-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  font-family: "icomoon";
+  position: absolute;
+  background-color: red;
+  top: 3px;
+  right: 12px;
+}
+
+.box-p {
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+}
+
+.p-num {
+  margin-left: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  vertical-align: -1px;
+}
+
+.num-d {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.box-tq {
+  font-weight: 700;
+  color: red;
+  font-family: 'PingFangSC-regular';
+}
+
+.box-sv {
+  margin-top: 20px;
+}
+
+.sv-tet {
+  font-weight: 700;
+}
+
+
+.lf-box {
+  width: 15px;
+  height: 95px;
+  background-color: #B8D9F5;
+  float: left;
+  margin-top: 22px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.ri-box {
+  width: 15px;
+  height: 95px;
+  background-color: #B8D9F5;
+  float: right;
+  margin-top: 22px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.tu-b {
+  width: 100%;
+  height: 100%;
+}
+
+.j-time {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.j-tit {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #2299FF;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.mychart {
+  margin: 0 auto;
+  background-color: pink;
+}
+
+.tu-box {
+  width: 100%;
+  background-color: #fff;
+  height: 161px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.trade{
+  width: 90%;
+  margin: 10px auto;
+}
+
+
+
+ec-canvas {
+  width: 295px;
+  height: 91px;
+}
+
+.tip {
+  width: 90%;
+  height: 40px;
+}
+
+.tip-box {
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #fff;
+}
+
+.tip-tet {
+  display: flex;
+}
+
+.left-box,
+.rig-box {
+  width: 50%;
+  text-align: center;
+  line-height: 30px;
+}
+
+.left-box {
+  color: #2299FF;
+}
+
+.rig-box {
+  color: #FF8400;
+}
+
+.shaky {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.shaky-box {
+  display: flex;
+  font-size: 14px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.fl {
+  min-width: 162px;
+  background-color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.sk-box {
+  width: 100%;
+  height: 130px;
+}
+
+.sk-tet {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: #909090;
+}
+
+.sk-pl {
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  color: #2299FF;
+}
+
+.pl-num {
+  font-weight: 700;
+}
+
+.pl-b,
+.pl-t {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.pl-ic {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #F90707;
+  position: absolute;
+  top: 40%;
+  left: -15px;
+}
+
+.pl-t-ic {
+  background-color: #ff8400;
+}
+
+
+.bar swiper-item {
+  overflow: scroll;
+}
+
+.bar {
+  
+}
+
+.fr {
+  width: 90%;
+  margin: 0 auto; 
+}
+
+.ma {
+  width: 90%;
+  margin: 0 auto; 
+}
+
